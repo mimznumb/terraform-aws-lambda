@@ -156,48 +156,24 @@ module "lambda_api" {
 
 ## Testing
 
-This module includes comprehensive test coverage with both unit and integration tests.
+Tests validate the module by deploying the actual examples.
 
 ### Quick Start
 
 ```bash
-# Run unit tests (no AWS credentials needed - uses mocks)
-terraform test -filter=tests/unit.tftest.hcl
-
-# Run integration tests (requires AWS credentials)
-terraform test -filter=tests/integration.tftest.hcl
+terraform test  # Tests both examples
 ```
 
-### Test Coverage
+### What Gets Tested
 
-- ✅ **17 Unit Tests** - Fast, local validation with mocked AWS provider
-- ✅ **5 Integration Tests** - Real AWS resource creation and validation
-- ✅ **CI/CD Ready** - GitHub Actions workflow included
-- ✅ **Registry Ready** - Automated testing in Terraform Cloud Registry
+1. **Simple Lambda Example** - Basic Lambda deployment
+2. **Secrets Manager Example** - Lambda with Secrets Manager access
 
-### Documentation
+Each test deploys the full example and verifies it works correctly.
 
-- **[Tests README](tests/README.md)** - Detailed testing guide and examples
-- **[Terraform Cloud Testing](TERRAFORM_CLOUD_TESTING.md)** - Registry publishing and automated testing
+See [tests/README.md](tests/README.md) for details.
 
-### Example: Testing Locally
-
-```bash
-# Clone the repository
-git clone https://github.com/yourorg/terraform-aws-lambda
-cd terraform-aws-lambda
-
-# Run all tests
-terraform init
-terraform test
-
-# Test a specific example
-cd examples/simple-lambda
-terraform init
-terraform plan
-```
-
-## Notes
+## Examples
 
 
 - Either `filename` OR (`s3_bucket` and `s3_key`) must be provided for the Lambda deployment package

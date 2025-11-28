@@ -1,16 +1,13 @@
+import json
+
 def handler(event, context):
     """
-    Simple Lambda handler that returns a greeting.
+    Simple test Lambda function.
     """
-    import os
-    import json
-    
-    greeting = os.environ.get('GREETING', 'Hello')
-    
     return {
         'statusCode': 200,
         'body': json.dumps({
-            'message': greeting,
+            'message': 'Lambda executed successfully!',
             'event': event
         })
     }
