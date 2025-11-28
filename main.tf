@@ -51,7 +51,7 @@ resource "aws_lambda_function" "this" {
   memory_size   = var.memory_size
 
   filename         = var.filename
-  source_code_hash = var.filename != null ? filebase64sha256(var.filename) : null
+  source_code_hash = var.filename != null ? try(filebase64sha256(var.filename), null) : null
 
   s3_bucket         = var.s3_bucket
   s3_key            = var.s3_key
