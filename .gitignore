@@ -25,8 +25,8 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Lambda deployment packages
-*.zip
+# Lambda deployment packages (ignore test fixtures only)
+tests/**/*.zip
 
 # Python
 __pycache__/
