@@ -21,8 +21,3 @@ output "response_payload" {
   description = "Response from Lambda invocation"
   value       = data.aws_lambda_invocation.test.result
 }
-
-output "status_code" {
-  description = "Status code from Lambda invocation"
-  value       = data.aws_lambda_invocation.test.result_map.StatusCode
-}
