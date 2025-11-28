@@ -1,6 +1,10 @@
 # Integration Tests Using Examples
 # Tests deploy examples and invoke the Lambda functions to verify they work
 
+provider "aws" {
+  region = "us-east-1"
+}
+
 # Test 1: Simple Lambda Example
 run "simple_lambda_example" {
   command = apply
