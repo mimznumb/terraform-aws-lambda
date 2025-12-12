@@ -1,5 +1,3 @@
-# Mock Unit Tests - Run Locally Without AWS
-
 # Mock AWS provider - no real AWS calls
 mock_provider "aws" {}
 
